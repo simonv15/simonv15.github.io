@@ -107,21 +107,25 @@ img {
 
 .toc-dash {
   display: block;
-  font-size: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
   color: var(--toc-color);
   text-decoration: none;
-  transition: color var(--transition-fast), font-weight var(--transition-fast);
+  transition: color var(--transition-fast), opacity var(--transition-fast);
   line-height: 1;
-  letter-spacing: -0.05em;
+  letter-spacing: 0.02em;
+  opacity: 0.5;
 }
 
 .toc-dash:hover {
   color: var(--text-secondary);
+  opacity: 1;
 }
 
 .toc-dash.active {
   color: var(--accent);
-  font-weight: 800;
+  font-weight: 700;
+  opacity: 1;
 }
 
 @media (max-width: 1200px) {
