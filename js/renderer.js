@@ -240,6 +240,7 @@ window.Portfolio.Renderer = (function () {
   function setupNavHighlight() {
     var sections = document.querySelectorAll('.section[id]');
     var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    var tocLinks = document.querySelectorAll('.toc-dash');
 
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -247,6 +248,9 @@ window.Portfolio.Renderer = (function () {
           var id = entry.target.id;
           navLinks.forEach(function (link) {
             link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+          tocLinks.forEach(function (link) {
+            link.classList.toggle('active', link.getAttribute('data-section') === id);
           });
         }
       });
@@ -277,10 +281,12 @@ window.Portfolio.Renderer = (function () {
     renderSkills(data.skills);
     renderBlog(data.blog);
 
-    // Hide nav links for empty sections
+    // Hide nav/toc links for empty sections
     if (!data.blog || !data.blog.length) {
       var blogNav = document.querySelector('.nav-links a[href="#section-blog"]');
       if (blogNav) blogNav.parentElement.style.display = 'none';
+      var blogToc = document.querySelector('.toc-dash[data-section="section-blog"]');
+      if (blogToc) blogToc.parentElement.style.display = 'none';
     }
 
     // Post-render setup

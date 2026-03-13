@@ -10,6 +10,44 @@
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+/* Webkit scrollbar — thin, subtle, auto-fading */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Also style inner section scrollbars */
+.section::-webkit-scrollbar {
+  width: 4px;
+}
+
+.section::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.section::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.section::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
 }
 
 body {
@@ -43,6 +81,49 @@ a:hover {
 img {
   max-width: 100%;
   display: block;
+}
+
+/* Table of Contents */
+.toc {
+  position: fixed;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.toc-dash {
+  display: block;
+  font-size: 1rem;
+  color: var(--border);
+  text-decoration: none;
+  transition: color var(--transition-fast), font-weight var(--transition-fast);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.toc-dash:hover {
+  color: var(--text-secondary);
+}
+
+.toc-dash.active {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+@media (max-width: 1200px) {
+  .toc {
+    display: none;
+  }
 }
 
 /* Nav */
