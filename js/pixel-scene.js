@@ -5,6 +5,7 @@ window.Portfolio.PixelScene = (function () {
   var W = 480, H = 280;
   var frame = 0;
   var animId = null;
+  var lastFrame = 0;
   var isDark = false;
 
   // Monokai-inspired palette
@@ -510,9 +511,12 @@ window.Portfolio.PixelScene = (function () {
     drawScanlineOverlay();
   }
 
-  function loop() {
+  function loop(timestamp) {
     animId = requestAnimationFrame(loop);
     if (document.hidden) return;
+    // ~15fps for a slower, retro feel
+    if (timestamp - lastFrame < 66) return;
+    lastFrame = timestamp;
     frame++;
     draw();
   }
