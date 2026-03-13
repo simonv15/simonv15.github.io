@@ -17,19 +17,36 @@ window.Portfolio.Renderer = (function () {
     return div.innerHTML;
   }
 
-  function renderHero(data) {
+  function renderHero(about, contact) {
     var el = document.getElementById('section-about');
-    if (!el || !data) return;
+    if (!el || !about) return;
 
     var html = '<div class="hero-content section-content">';
-    html += '<h1 class="hero-name">' + esc(data.name) + '</h1>';
-    html += '<p class="hero-tagline">' + esc(data.tagline) + '</p>';
-    html += '<p class="hero-summary">' + esc(data.summary) + '</p>';
-    if (data.resume_url) {
-      html += '<a href="' + esc(data.resume_url) + '" class="hero-resume" target="_blank" rel="noopener">Download Resume</a>';
+    html += '<h1 class="hero-name">' + esc(about.name) + '</h1>';
+    html += '<p class="hero-tagline">' + esc(about.tagline) + '</p>';
+    html += '<p class="hero-summary">' + esc(about.summary) + '</p>';
+    if (about.resume_url) {
+      html += '<a href="' + esc(about.resume_url) + '" class="hero-resume" target="_blank" rel="noopener">Download Resume</a>';
     }
-    html += '</div>';
 
+    // Contact inline
+    if (contact) {
+      html += '<div class="hero-contact">';
+      if (contact.email) {
+        html += '<a href="mailto:' + esc(contact.email) + '" class="hero-email">' + esc(contact.email) + '</a>';
+      }
+      if (contact.links && contact.links.length) {
+        html += '<div class="hero-social">';
+        contact.links.forEach(function (link) {
+          var icon = icons[link.icon] || icons.external;
+          html += '<a href="' + esc(link.url) + '" target="_blank" rel="noopener" class="social-link" title="' + esc(link.label) + '">' + icon + '</a>';
+        });
+        html += '</div>';
+      }
+      html += '</div>';
+    }
+
+    html += '</div>';
     el.querySelector('.section-inner').innerHTML = html;
   }
 
@@ -73,7 +90,7 @@ window.Portfolio.Renderer = (function () {
     if (!el || !data) return;
 
     var html = '<div class="section-content">';
-    html += '<h2 class="section-title">Projects</h2>';
+    html += '<h2 class="section-title">Public Projects</h2>';
     html += '<div class="projects-grid">';
 
     data.forEach(function (item) {
@@ -254,13 +271,11 @@ window.Portfolio.Renderer = (function () {
       if (brand) brand.textContent = data.about.name;
     }
 
-    renderHero(data.about);
+    renderHero(data.about, data.contact);
     renderExperience(data.experience);
     renderProjects(data.projects);
     renderSkills(data.skills);
-    renderEducation(data.education);
     renderBlog(data.blog);
-    renderContact(data.contact);
 
     // Hide nav links for empty sections
     if (!data.blog || !data.blog.length) {

@@ -13,9 +13,11 @@ about:
   tagline: "AI Engineer"
   summary: >
     AI Engineer based in Ho Chi Minh City, Vietnam. I build end-to-end GenAI
-    systems — from LLM-powered content pipelines and RAG chatbots to computer
-    vision and prompt engineering workflows. Passionate about turning research
-    into production-grade tools.
+    and data systems — automated content factories that crawl, analyze, and
+    generate bilingual news content across platforms; RAG-powered chatbots;
+    retail shelf compliance with object detection and vector search; and
+    batch data pipelines with Airflow, ClickHouse, and dbt. Passionate about
+    shipping research into production.
   avatar: ""
   resume_url: ""
 
@@ -72,6 +74,11 @@ projects:
     url: "https://github.com/simonv15/mema-kit"
     highlight: true
 
+  - name: "data-analyst-agent"
+    description: "A Telegram bot for natural language CSV analysis — upload data, ask questions conversationally, and get AI-generated pandas/matplotlib results with visualizations in chat."
+    tags: ["Python", "OpenAI API", "Telegram Bot", "pandas", "matplotlib"]
+    url: "https://github.com/simonv15/data-analyst-agent"
+    highlight: true
 
 # ============================================================
 # Skills / Tech Stack

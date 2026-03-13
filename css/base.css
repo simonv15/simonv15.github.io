@@ -9,15 +9,17 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--nav-height);
+  scroll-snap-type: y mandatory;
 }
 
 body {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-primary);
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+  background-size: 24px 24px;
   transition: background-color var(--transition-normal), color var(--transition-normal);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -136,8 +138,11 @@ img {
 
 /* Sections */
 .section {
-  padding: var(--section-padding);
-  min-height: 50vh;
+  padding: 2rem 1.5rem;
+  padding-top: calc(var(--nav-height) + 2rem);
+  scroll-snap-align: start;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .section-inner {
@@ -146,9 +151,9 @@ img {
 }
 
 .section-title {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
   position: relative;
   display: inline-block;
@@ -167,10 +172,8 @@ img {
 
 /* Hero section */
 .hero {
-  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: var(--nav-height);
 }
 
 .hero-content {
@@ -178,35 +181,54 @@ img {
 }
 
 .hero-name {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1.1;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .hero-tagline {
   font-family: var(--font-mono);
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   color: var(--accent);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-weight: 400;
 }
 
 .hero-summary {
-  font-size: 1.125rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
   max-width: 560px;
   line-height: 1.7;
 }
 
+.hero-contact {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-email {
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.hero-social {
+  display: flex;
+  gap: 0.5rem;
+}
+
 /* Footer */
 .footer {
   text-align: center;
-  padding: 2rem 1.5rem;
+  padding: 1rem 1.5rem;
   color: var(--text-secondary);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   border-top: 1px solid var(--border);
+  scroll-snap-align: end;
 }
 
 /* Scroll reveal */
@@ -261,7 +283,7 @@ img {
     align-items: center;
   }
 
-  :root {
-    --section-padding: 4rem 1rem;
+  .section {
+    padding: 2.5rem 1rem;
   }
 }
