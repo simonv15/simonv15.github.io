@@ -1,0 +1,130 @@
+# ============================================================
+# Site-wide metadata
+# ============================================================
+site:
+  title: "Van Sy — AI Engineer"
+  description: "Portfolio of Van Sy, AI Engineer specializing in LLMs, ML systems, and applied AI."
+
+# ============================================================
+# About / Hero
+# ============================================================
+about:
+  name: "Van Sy"
+  tagline: "AI Engineer"
+  summary: >
+    Building intelligent systems at the intersection of machine learning and
+    software engineering. Passionate about LLMs, retrieval-augmented generation,
+    and turning research into production-grade tools.
+  avatar: ""
+  resume_url: ""
+
+# ============================================================
+# Work Experience
+# ============================================================
+experience:
+  - company: "Dummy Company #1"
+    role: "AI Engineer"
+    period: "2024 – Present"
+    location: "San Francisco, CA"
+    bullets:
+      - "Led development of a RAG pipeline serving 50k daily queries with sub-200ms P95 latency."
+      - "Fine-tuned domain-specific LLMs, improving task accuracy by 18% over baseline."
+      - "Designed and deployed real-time feature store on Kubernetes."
+
+  - company: "Dummy Company #2"
+    role: "AI Engineer"
+    period: "2021 – 2024"
+    location: "Remote"
+    bullets:
+      - "Built end-to-end ML pipelines (data ingestion, training, serving) on AWS SageMaker."
+      - "Reduced model inference cost by 40% through quantization and batching optimizations."
+      - "Mentored junior engineers on MLOps best practices and model monitoring."
+
+  - company: "Dummy Company #3"
+    role: "Data Scientist Intern"
+    period: "2020 – 2021"
+    location: "Ho Chi Minh City, Vietnam"
+    bullets:
+      - "Implemented transformer-based NER models for Vietnamese text processing."
+      - "Published internal research paper on few-shot learning for low-resource languages."
+
+# ============================================================
+# Projects
+# ============================================================
+projects:
+  - name: "Dummy Project #1"
+    description: "Dummy project #1 description"
+    tags: ["Python", "LangChain", "FastAPI"]
+    url: "#"
+    highlight: true
+
+  - name: "Dummy Project #2"
+    description: "Dummy project #2 description"
+    tags: ["Rust", "Python", "FAISS"]
+    url: "#"
+    highlight: false
+
+  - name: "Dummy Project #3"
+    description: "Dummy project #3 description"
+    tags: ["TypeScript", "OpenAI API", "Pinecone"]
+    url: "#"
+    highlight: false
+
+  - name: "Dummy Project #4"
+    description: "Dummy project #4 description"
+    tags: ["Python", "Grafana", "Prometheus"]
+    url: "#"
+    highlight: false
+
+# ============================================================
+# Skills / Tech Stack
+# ============================================================
+skills:
+  - category: "Languages"
+    items: ["Python", "SQL"]
+
+  - category: "ML / AI"
+    items: ["PyTorch", "Hugging Face", "LangChain", "OpenAI API", "ONNX", "TensorRT"]
+
+  - category: "Infrastructure"
+    items: ["Docker"]
+
+  - category: "Data"
+    items: ["PostgreSQL", "Redis", "Pinecone", "Elasticsearch", "Kafka"]
+
+# ============================================================
+# Blog
+# ============================================================
+blog:
+  # - title: "Fine-Tuning LLMs on a Budget"
+  #   date: "2025-12-01"
+  #   summary: "Practical tips for QLoRA fine-tuning on a single A100."
+  #   url: "#"
+
+  # - title: "RAG Architecture Patterns"
+  #   date: "2025-09-15"
+  #   summary: "Comparing naive RAG, advanced RAG, and modular RAG pipelines."
+  #   url: "#"
+
+  # - title: "From Notebooks to Production"
+  #   date: "2025-06-20"
+  #   summary: "A practical guide to turning Jupyter experiments into reliable ML services."
+  #   url: "#"
+
+# ============================================================
+# Contact / Social Links
+# ============================================================
+contact:
+  email: "vansy@example.com"
+  links:
+    - label: "GitHub"
+      url: "https://github.com/simonv15"
+      icon: "github"
+
+    # - label: "LinkedIn"
+    #   url: "https://linkedin.com/in/vansy"
+    #   icon: "linkedin"
+
+    # - label: "Twitter / X"
+    #   url: "https://x.com/vansy"
+    #   icon: "twitter"
