@@ -14,7 +14,8 @@
   --tag-bg: #edeadd;
   --tag-text: #75715e;
   --timeline-line: #e5e2d6;
-  --dot-color: rgba(39, 40, 34, 0.05);
+  --dot-color: rgba(39, 40, 34, 0.10);
+  --toc-color: #272822;
 
   /* Spacing & sizing */
   --max-width: 1100px;
@@ -46,5 +47,6 @@
   --tag-bg: #3e3d32;
   --tag-text: #a6a68a;
   --timeline-line: #3e3d32;
-  --dot-color: rgba(248, 248, 242, 0.03);
+  --dot-color: rgba(248, 248, 242, 0.08);
+  --toc-color: #3e3d32;
 }

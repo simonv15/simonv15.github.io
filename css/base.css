@@ -56,8 +56,6 @@ body {
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-primary);
-  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
-  background-size: 24px 24px;
   transition: background-color var(--transition-normal), color var(--transition-normal);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -66,6 +64,13 @@ body {
 ::selection {
   background: var(--accent);
   color: var(--bg-primary);
+}
+
+#dot-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
 }
 
 a {
@@ -104,7 +109,7 @@ img {
 .toc-dash {
   display: block;
   font-size: 1rem;
-  color: var(--border);
+  color: var(--toc-color);
   text-decoration: none;
   transition: color var(--transition-fast), font-weight var(--transition-fast);
   line-height: 1;
@@ -217,6 +222,65 @@ img {
   height: 18px;
 }
 
+/* Welcome section */
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--nav-height);
+}
+
+.welcome-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#pixel-scene {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+}
+
+.welcome-text {
+  text-align: center;
+}
+
+.welcome-name {
+  font-family: var(--font-mono);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--text-primary);
+}
+
+.welcome-sub {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-top: 0.25rem;
+  letter-spacing: 0.1em;
+}
+
+.welcome-prompt {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-top: 1.25rem;
+  letter-spacing: 0.05em;
+}
+
+.blink {
+  animation: blink-cursor 1s step-end infinite;
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 /* Sections */
 .section {
   padding: 2rem 1.5rem;
@@ -285,21 +349,25 @@ img {
 }
 
 .hero-contact {
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8rem;
 }
 
-.hero-email {
-  font-size: 0.85rem;
+.hero-contact-item {
+  color: var(--text-secondary);
+}
+
+.hero-contact-item:hover {
   color: var(--accent);
 }
 
-.hero-social {
-  display: flex;
-  gap: 0.5rem;
+.hero-contact-item::before {
+  content: '•';
+  margin-right: 0.5rem;
+  color: var(--text-secondary);
 }
 
 /* Footer */

@@ -29,6 +29,9 @@
   <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
+  <!-- Dot background canvas -->
+  <canvas id="dot-bg"></canvas>
+
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav-inner">
@@ -56,7 +59,8 @@
   <!-- Table of Contents -->
   <aside id="toc" class="toc">
     <ul class="toc-list">
-      <li><a href="#section-about" class="toc-dash active" data-section="section-about">—</a></li>
+      <li><a href="#section-welcome" class="toc-dash active" data-section="section-welcome">—</a></li>
+      <li><a href="#section-about" class="toc-dash" data-section="section-about">—</a></li>
       <li><a href="#section-experience" class="toc-dash" data-section="section-experience">—</a></li>
       <li><a href="#section-projects" class="toc-dash" data-section="section-projects">—</a></li>
       <li><a href="#section-skills" class="toc-dash" data-section="section-skills">—</a></li>
@@ -66,6 +70,17 @@
 
   <!-- Main content -->
   <main>
+    <section id="section-welcome" class="section welcome">
+      <div class="welcome-inner">
+        <canvas id="pixel-scene" width="320" height="200"></canvas>
+        <div class="welcome-text">
+          <div class="welcome-name">VAN SY</div>
+          <div class="welcome-sub">AI Engineer</div>
+          <div class="welcome-prompt">scroll to enter<span class="blink">_</span></div>
+        </div>
+      </div>
+    </section>
+
     <section id="section-about" class="section hero">
       <div class="section-inner"></div>
     </section>
@@ -95,6 +110,8 @@
   <!-- Scripts -->
   <script src="js/lib/js-yaml.min.js"></script>
   <script src="js/theme.js"></script>
+  <script src="js/dots.js"></script>
+  <script src="js/pixel-scene.js"></script>
   <script src="js/renderer.js"></script>
   <script src="js/main.js"></script>
 </body>

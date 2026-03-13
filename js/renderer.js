@@ -33,15 +33,15 @@ window.Portfolio.Renderer = (function () {
     if (contact) {
       html += '<div class="hero-contact">';
       if (contact.email) {
-        html += '<a href="mailto:' + esc(contact.email) + '" class="hero-email">' + esc(contact.email) + '</a>';
+        html += '<a href="mailto:' + esc(contact.email) + '" class="hero-contact-item">' + esc(contact.email) + '</a>';
+      }
+      if (contact.phone) {
+        html += '<a href="tel:' + esc(contact.phone.replace(/\s/g, '')) + '" class="hero-contact-item">' + esc(contact.phone) + '</a>';
       }
       if (contact.links && contact.links.length) {
-        html += '<div class="hero-social">';
         contact.links.forEach(function (link) {
-          var icon = icons[link.icon] || icons.external;
-          html += '<a href="' + esc(link.url) + '" target="_blank" rel="noopener" class="social-link" title="' + esc(link.label) + '">' + icon + '</a>';
+          html += '<a href="' + esc(link.url) + '" target="_blank" rel="noopener" class="hero-contact-item">' + esc(link.url) + '</a>';
         });
-        html += '</div>';
       }
       html += '</div>';
     }

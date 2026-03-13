@@ -2,8 +2,10 @@ window.Portfolio = window.Portfolio || {};
 
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
-    // 1. Initialize theme
+    // 1. Initialize theme + dots
     Portfolio.Theme.init();
+    Portfolio.Dots.init();
+    Portfolio.PixelScene.init();
 
     // 2. Fetch and parse YAML config
     fetch('data/config.yaml')
