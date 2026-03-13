@@ -70,12 +70,16 @@
   <main id="tab-portfolio" class="tab-content active">
     <section id="section-welcome" class="section welcome">
       <div class="welcome-inner">
-        <canvas id="pixel-scene" width="320" height="200"></canvas>
-        <div class="welcome-text">
-          <div class="welcome-name">VAN SY</div>
-          <div class="welcome-sub">AI Engineer</div>
-          <div class="welcome-prompt">scroll to enter<span class="blink">_</span></div>
+        <div id="terminal" class="terminal">
+          <div class="terminal-titlebar">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+            <span class="terminal-title">vansy@portfolio ~ </span>
+          </div>
+          <div id="terminal-body" class="terminal-body"><span id="terminal-cursor" class="terminal-cursor">█</span></div>
         </div>
+        <div class="welcome-prompt">scroll to enter<span class="blink">_</span></div>
       </div>
     </section>
 
@@ -115,7 +119,7 @@
   <script src="js/lib/js-yaml.min.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/dots.js"></script>
-  <script src="js/pixel-scene.js"></script>
+  <script src="js/terminal.js"></script>
   <script src="js/renderer.js"></script>
   <script src="js/main.js"></script>
 </body>

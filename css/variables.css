@@ -17,6 +17,13 @@
   --dot-color: rgba(39, 40, 34, 0.10);
   --toc-color: #272822;
 
+  /* Terminal */
+  --terminal-bg: #f5f3e8;
+  --terminal-titlebar: #edeadd;
+  --terminal-text: #272822;
+  --terminal-success: #4a7a10;
+  --terminal-ascii: #3a7a95;
+
   /* Spacing & sizing */
   --max-width: 1100px;
   --nav-height: 60px;
@@ -49,4 +56,11 @@
   --timeline-line: #3e3d32;
   --dot-color: rgba(248, 248, 242, 0.08);
   --toc-color: #3e3d32;
+
+  /* Terminal */
+  --terminal-bg: #1a1a1e;
+  --terminal-titlebar: #141416;
+  --terminal-text: #f8f8f2;
+  --terminal-success: #a6e22e;
+  --terminal-ascii: #66d9ef;
 }
