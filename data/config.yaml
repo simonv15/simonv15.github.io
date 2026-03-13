@@ -3,7 +3,7 @@
 # ============================================================
 site:
   title: "Van Sy — AI Engineer"
-  description: "Portfolio of Van Sy, AI Engineer specializing in LLMs, ML systems, and applied AI."
+  description: "Portfolio of Van Sy, AI Engineer based in HCMC, Vietnam. Specializing in GenAI, LLMs, and applied ML systems."
 
 # ============================================================
 # About / Hero
@@ -12,9 +12,10 @@ about:
   name: "Van Sy"
   tagline: "AI Engineer"
   summary: >
-    Building intelligent systems at the intersection of machine learning and
-    software engineering. Passionate about LLMs, retrieval-augmented generation,
-    and turning research into production-grade tools.
+    AI Engineer based in Ho Chi Minh City, Vietnam. I build end-to-end GenAI
+    systems — from LLM-powered content pipelines and RAG chatbots to computer
+    vision and prompt engineering workflows. Passionate about turning research
+    into production-grade tools.
   avatar: ""
   resume_url: ""
 
@@ -22,109 +23,98 @@ about:
 # Work Experience
 # ============================================================
 experience:
-  - company: "Dummy Company #1"
-    role: "AI Engineer"
-    period: "2024 – Present"
-    location: "San Francisco, CA"
+  - company: "F8A Tech Co. Ltd"
+    role: "GenAI Engineer"
+    period: "Jul 2025 – Present"
+    location: "District 1, HCMC"
     bullets:
-      - "Led development of a RAG pipeline serving 50k daily queries with sub-200ms P95 latency."
-      - "Fine-tuned domain-specific LLMs, improving task accuracy by 18% over baseline."
-      - "Designed and deployed real-time feature store on Kubernetes."
+      - "Architected an end-to-end automation content factory that scrapes crypto news, processes and categorizes it, and generates bilingual social media posts across three platforms plus daily long-form reports."
+      - "Applied Spec-driven development with GenAI; built a conversational chatbot about cryptocurrency news with a RAG pipeline."
+      - "Built a Retail Shelf Compliance System — end-to-end SKU recognition using RT-DETRv4 S + CLIP ViT-B/16 + FAISS, delivered as a production-ready FastAPI service."
+      - "Built a containerized batch data pipeline with Apache Airflow, ClickHouse, and Apache Superset — schema-agnostic ingestion, 6-dimension data quality validation, idempotent loading, and MinIO staging."
 
-  - company: "Dummy Company #2"
-    role: "AI Engineer"
-    period: "2021 – 2024"
-    location: "Remote"
+  - company: "AHA Speak"
+    role: "GenAI Engineer"
+    period: "Sep 2024 – Jan 2025"
+    location: "Binh Thanh, HCMC"
     bullets:
-      - "Built end-to-end ML pipelines (data ingestion, training, serving) on AWS SageMaker."
-      - "Reduced model inference cost by 40% through quantization and batching optimizations."
-      - "Mentored junior engineers on MLOps best practices and model monitoring."
+      - "Designed and optimized LLM-based multilingual quiz generation workflows using Chain-of-Thought and Reflection techniques, achieving 98–99% accuracy on vocabulary quizzes and 97% on dialogue-based quizzes."
+      - "Developed a prompt engineering pipeline with test case design, evaluation via Promptfoo, and version control via Git to continuously improve quiz quality using OpenAI, Google AI Studio, and Python."
 
-  - company: "Dummy Company #3"
-    role: "Data Scientist Intern"
-    period: "2020 – 2021"
-    location: "Ho Chi Minh City, Vietnam"
+  - company: "TIASA Tech JSC"
+    role: "AI Engineer"
+    period: "May 2023 – Sep 2024"
+    location: "Binh Thanh, HCMC"
     bullets:
-      - "Implemented transformer-based NER models for Vietnamese text processing."
-      - "Published internal research paper on few-shot learning for low-resource languages."
+      - "Built and optimized an OCR model for math expressions (ResNet–Transformer architecture), recognizing English and Vietnamese equations with a Character Error Rate (CER) of 0.03."
+      - "Designed LLM prompting strategies for a Math tutor chatbot using Chain-of-Thought, guiding students through reasoning-based solutions and achieving 70% accuracy on the test set."
+      - "Developed a data migration tool to transfer course and exam datasets between systems, enabling smooth synchronization across development and production environments."
+
+# ============================================================
+# Education
+# ============================================================
+education:
+  - degree: "Bachelor of Data Science"
+    school: "Industrial University of Ho Chi Minh City"
+    period: "2019 – 2025"
+    gpa: "3.28 / 4.0"
+    highlights:
+      - "Earned five academic scholarships for good students."
+      - "Projects: Loan approval prediction, Face mask recognition, Image style transfer (CycleGAN), Financial portfolio optimization (Mean–Variance Model)."
 
 # ============================================================
 # Projects
 # ============================================================
 projects:
-  - name: "Dummy Project #1"
-    description: "Dummy project #1 description"
-    tags: ["Python", "LangChain", "FastAPI"]
-    url: "#"
+  - name: "mema-kit"
+    description: "A memory protocol toolkit for AI coding agents, enabling persistent, curated knowledge across sessions. Provides 12 built-in skills spanning idea validation, feature decomposition, technical planning, and implementation."
+    tags: ["Claude Code", "Skills", "Development Workflow"]
+    url: "https://github.com/simonv15/mema-kit"
     highlight: true
 
-  - name: "Dummy Project #2"
-    description: "Dummy project #2 description"
-    tags: ["Rust", "Python", "FAISS"]
-    url: "#"
-    highlight: false
-
-  - name: "Dummy Project #3"
-    description: "Dummy project #3 description"
-    tags: ["TypeScript", "OpenAI API", "Pinecone"]
-    url: "#"
-    highlight: false
-
-  - name: "Dummy Project #4"
-    description: "Dummy project #4 description"
-    tags: ["Python", "Grafana", "Prometheus"]
-    url: "#"
-    highlight: false
 
 # ============================================================
 # Skills / Tech Stack
 # ============================================================
 skills:
-  - category: "Languages"
-    items: ["Python", "SQL"]
+  - category: "Programming"
+    items: ["Python", "Jupyter Notebook", "Git", "Bash", "Docker"]
 
-  - category: "ML / AI"
-    items: ["PyTorch", "Hugging Face", "LangChain", "OpenAI API", "ONNX", "TensorRT"]
+  - category: "GenAI"
+    items: ["Context Engineering", "Spec-driven Development", "Claude Code", "Cursor", "Prompt Engineering"]
 
-  - category: "Infrastructure"
-    items: ["Docker"]
+  - category: "ML & DL"
+    items: ["scikit-learn", "PyTorch", "Hugging Face", "Transformers", "WandB", "Lightning"]
 
   - category: "Data"
-    items: ["PostgreSQL", "Redis", "Pinecone", "Elasticsearch", "Kafka"]
+    items: ["pandas", "NumPy", "Matplotlib", "Seaborn", "Plotly", "Metabase"]
+
+  - category: "Databases"
+    items: ["PostgreSQL", "Pinecone", "Qdrant", "ClickHouse"]
+
+  - category: "Tools"
+    items: ["uv", "Poetry", "Promptfoo", "Streamlit", "LangSmith", "DBeaver", "Airflow", "Locust", "Apache Superset"]
 
 # ============================================================
 # Blog
 # ============================================================
-blog:
-  # - title: "Fine-Tuning LLMs on a Budget"
-  #   date: "2025-12-01"
-  #   summary: "Practical tips for QLoRA fine-tuning on a single A100."
-  #   url: "#"
-
-  # - title: "RAG Architecture Patterns"
-  #   date: "2025-09-15"
-  #   summary: "Comparing naive RAG, advanced RAG, and modular RAG pipelines."
-  #   url: "#"
-
-  # - title: "From Notebooks to Production"
-  #   date: "2025-06-20"
-  #   summary: "A practical guide to turning Jupyter experiments into reliable ML services."
-  #   url: "#"
+# blog:
+#   Uncomment and add your blog posts here:
+#   - title: "Post Title"
+#     date: "2025-12-01"
+#     summary: "Short summary of the post."
+#     url: "https://..."
 
 # ============================================================
 # Contact / Social Links
 # ============================================================
 contact:
-  email: "vansy@example.com"
+  email: "vansy.work@gmail.com"
   links:
     - label: "GitHub"
       url: "https://github.com/simonv15"
       icon: "github"
 
-    # - label: "LinkedIn"
-    #   url: "https://linkedin.com/in/vansy"
-    #   icon: "linkedin"
-
-    # - label: "Twitter / X"
-    #   url: "https://x.com/vansy"
-    #   icon: "twitter"
+    - label: "LinkedIn"
+      url: "https://linkedin.com/in/syvan"
+      icon: "linkedin"

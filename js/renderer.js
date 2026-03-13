@@ -125,9 +125,45 @@ window.Portfolio.Renderer = (function () {
     el.querySelector('.section-inner').innerHTML = html;
   }
 
+  function renderEducation(data) {
+    var el = document.getElementById('section-education');
+    if (!el || !data || !data.length) return;
+
+    var html = '<div class="section-content">';
+    html += '<h2 class="section-title">Education</h2>';
+
+    data.forEach(function (item) {
+      html += '<div class="education-item">';
+      html += '<div class="education-degree">' + esc(item.degree) + '</div>';
+      html += '<div class="education-school">' + esc(item.school) + '</div>';
+      html += '<div class="timeline-meta">';
+      html += '<span>' + icons.calendar + ' ' + esc(item.period) + '</span>';
+      if (item.gpa) {
+        html += '<span>GPA: ' + esc(item.gpa) + '</span>';
+      }
+      html += '</div>';
+
+      if (item.highlights && item.highlights.length) {
+        html += '<ul class="timeline-bullets">';
+        item.highlights.forEach(function (h) {
+          html += '<li>' + esc(h) + '</li>';
+        });
+        html += '</ul>';
+      }
+      html += '</div>';
+    });
+
+    html += '</div>';
+    el.querySelector('.section-inner').innerHTML = html;
+  }
+
   function renderBlog(data) {
     var el = document.getElementById('section-blog');
-    if (!el || !data) return;
+    if (!el || !data || !data.length) {
+      // Hide section if no blog posts
+      if (el) el.style.display = 'none';
+      return;
+    }
 
     var html = '<div class="section-content">';
     html += '<h2 class="section-title">Blog</h2>';
@@ -222,8 +258,15 @@ window.Portfolio.Renderer = (function () {
     renderExperience(data.experience);
     renderProjects(data.projects);
     renderSkills(data.skills);
+    renderEducation(data.education);
     renderBlog(data.blog);
     renderContact(data.contact);
+
+    // Hide nav links for empty sections
+    if (!data.blog || !data.blog.length) {
+      var blogNav = document.querySelector('.nav-links a[href="#section-blog"]');
+      if (blogNav) blogNav.parentElement.style.display = 'none';
+    }
 
     // Post-render setup
     setupScrollReveal();

@@ -173,6 +173,29 @@
 }
 
 /* ============================================================
+   Education
+   ============================================================ */
+.education-item {
+  margin-bottom: 2rem;
+}
+
+.education-item:last-child {
+  margin-bottom: 0;
+}
+
+.education-degree {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.education-school {
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+/* ============================================================
    Skills
    ============================================================ */
 .skills-group {

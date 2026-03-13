@@ -16,9 +16,6 @@ window.Portfolio = window.Portfolio || {};
 
         // 3. Render site content
         Portfolio.Renderer.renderSite(data);
-
-        // 4. Start background animation
-        Portfolio.Background.init();
       })
       .catch(function (err) {
         console.error('Portfolio init error:', err);
