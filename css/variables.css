@@ -1,20 +1,20 @@
 :root {
-  /* Light theme — Anthropic warm palette */
+  /* Light theme — Monokai-inspired */
   --bg-primary: #faf9f0;
   --bg-secondary: #f5f3e8;
-  --text-primary: #131314;
-  --text-secondary: #5c5b57;
-  --accent: #d97757;
-  --accent-hover: #c4623f;
-  --accent-soft: rgba(217, 119, 87, 0.08);
+  --text-primary: #272822;
+  --text-secondary: #75715e;
+  --accent: #f92672;
+  --accent-hover: #e01d63;
+  --accent-soft: rgba(249, 38, 114, 0.08);
   --border: #e5e2d6;
-  --card-shadow: 0 1px 3px rgba(19, 19, 20, 0.06), 0 1px 2px rgba(19, 19, 20, 0.04);
-  --card-shadow-hover: 0 4px 12px rgba(19, 19, 20, 0.1), 0 2px 4px rgba(19, 19, 20, 0.06);
+  --card-shadow: 0 1px 3px rgba(39, 40, 34, 0.06), 0 1px 2px rgba(39, 40, 34, 0.04);
+  --card-shadow-hover: 0 4px 12px rgba(39, 40, 34, 0.1), 0 2px 4px rgba(39, 40, 34, 0.06);
   --nav-bg: rgba(250, 249, 240, 0.85);
   --tag-bg: #edeadd;
-  --tag-text: #5c5b57;
+  --tag-text: #75715e;
   --timeline-line: #e5e2d6;
-  --dot-color: rgba(19, 19, 20, 0.05);
+  --dot-color: rgba(39, 40, 34, 0.05);
 
   /* Spacing & sizing */
   --max-width: 1100px;
@@ -34,17 +34,17 @@
 [data-theme="dark"] {
   --bg-primary: #131314;
   --bg-secondary: #1c1c1e;
-  --text-primary: #ece9df;
-  --text-secondary: #9b9889;
-  --accent: #d97757;
-  --accent-hover: #e8926f;
-  --accent-soft: rgba(217, 119, 87, 0.1);
-  --border: #2a2a2c;
+  --text-primary: #f8f8f2;
+  --text-secondary: #75715e;
+  --accent: #a6e22e;
+  --accent-hover: #b6f23e;
+  --accent-soft: rgba(166, 226, 46, 0.1);
+  --border: #3e3d32;
   --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
   --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.25);
   --nav-bg: rgba(19, 19, 20, 0.85);
-  --tag-bg: #2a2a2c;
-  --tag-text: #9b9889;
-  --timeline-line: #2a2a2c;
-  --dot-color: rgba(236, 233, 223, 0.03);
+  --tag-bg: #3e3d32;
+  --tag-text: #a6a68a;
+  --timeline-line: #3e3d32;
+  --dot-color: rgba(248, 248, 242, 0.03);
 }
