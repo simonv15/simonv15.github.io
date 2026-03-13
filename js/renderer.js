@@ -224,37 +224,35 @@ window.Portfolio.Renderer = (function () {
   }
 
   function setupScrollReveal() {
+    var container = document.getElementById('tab-portfolio');
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.1, root: container, rootMargin: '0px 0px -50px 0px' });
 
-    document.querySelectorAll('.section-content').forEach(function (el) {
+    container.querySelectorAll('.section-content').forEach(function (el) {
       observer.observe(el);
     });
   }
 
   function setupNavHighlight() {
-    var sections = document.querySelectorAll('.section[id]');
-    var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-    var tocLinks = document.querySelectorAll('.toc-dash');
+    var container = document.getElementById('tab-portfolio');
+    var sections = container.querySelectorAll('.section[id]');
+    var tocLinks = document.querySelectorAll('#toc-portfolio .toc-dash');
 
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           var id = entry.target.id;
-          navLinks.forEach(function (link) {
-            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-          });
           tocLinks.forEach(function (link) {
             link.classList.toggle('active', link.getAttribute('data-section') === id);
           });
         }
       });
-    }, { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' });
+    }, { threshold: 0.3, root: container, rootMargin: '-80px 0px -50% 0px' });
 
     sections.forEach(function (s) { observer.observe(s); });
   }
@@ -279,15 +277,6 @@ window.Portfolio.Renderer = (function () {
     renderExperience(data.experience);
     renderProjects(data.projects);
     renderSkills(data.skills);
-    renderBlog(data.blog);
-
-    // Hide nav/toc links for empty sections
-    if (!data.blog || !data.blog.length) {
-      var blogNav = document.querySelector('.nav-links a[href="#section-blog"]');
-      if (blogNav) blogNav.parentElement.style.display = 'none';
-      var blogToc = document.querySelector('.toc-dash[data-section="section-blog"]');
-      if (blogToc) blogToc.parentElement.style.display = 'none';
-    }
 
     // Post-render setup
     setupScrollReveal();

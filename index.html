@@ -46,30 +46,28 @@
       </button>
 
       <ul id="nav-links" class="nav-links">
-        <li><a href="#section-about">About</a></li>
-        <li><a href="#section-experience">Experience</a></li>
-        <li><a href="#section-projects">Public Projects</a></li>
-        <li><a href="#section-skills">Skills</a></li>
-        <li><a href="#section-blog">Blog</a></li>
+        <li><a href="#" class="tab-link active" data-tab="portfolio">Portfolio</a></li>
+        <li><a href="#" class="tab-link" data-tab="blog">Blog</a></li>
         <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Table of Contents -->
+  <!-- Table of Contents (portfolio) -->
   <aside id="toc" class="toc">
-    <ul class="toc-list">
+    <ul class="toc-list" id="toc-portfolio">
       <li><a href="#section-welcome" class="toc-dash active" data-section="section-welcome">—</a></li>
       <li><a href="#section-about" class="toc-dash" data-section="section-about">—</a></li>
       <li><a href="#section-experience" class="toc-dash" data-section="section-experience">—</a></li>
       <li><a href="#section-projects" class="toc-dash" data-section="section-projects">—</a></li>
       <li><a href="#section-skills" class="toc-dash" data-section="section-skills">—</a></li>
-      <li><a href="#section-blog" class="toc-dash" data-section="section-blog">—</a></li>
+    </ul>
+    <ul class="toc-list" id="toc-blog" style="display:none;">
     </ul>
   </aside>
 
-  <!-- Main content -->
-  <main>
+  <!-- Tab: Portfolio -->
+  <main id="tab-portfolio" class="tab-content active">
     <section id="section-welcome" class="section welcome">
       <div class="welcome-inner">
         <canvas id="pixel-scene" width="320" height="200"></canvas>
@@ -96,9 +94,15 @@
     <section id="section-skills" class="section">
       <div class="section-inner"></div>
     </section>
+  </main>
 
-    <section id="section-blog" class="section">
-      <div class="section-inner"></div>
+  <!-- Tab: Blog -->
+  <main id="tab-blog" class="tab-content" style="display:none;">
+    <section class="section" style="display:flex;align-items:center;justify-content:center;">
+      <div class="section-inner" style="text-align:center;">
+        <h2 class="section-title" style="display:block;text-align:center;">Blog</h2>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:1rem;">Coming soon.</p>
+      </div>
     </section>
   </main>
 

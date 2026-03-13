@@ -9,7 +9,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
 }
@@ -32,21 +31,21 @@ html {
   background: var(--text-secondary);
 }
 
-/* Also style inner section scrollbars */
-.section::-webkit-scrollbar {
-  width: 4px;
+/* Tab content scrollbar */
+.tab-content::-webkit-scrollbar {
+  width: 6px;
 }
 
-.section::-webkit-scrollbar-track {
+.tab-content::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.section::-webkit-scrollbar-thumb {
+.tab-content::-webkit-scrollbar-thumb {
   background: var(--border);
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
-.section::-webkit-scrollbar-thumb:hover {
+.tab-content::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
 }
 
@@ -222,6 +221,26 @@ img {
   height: 18px;
 }
 
+/* Tab content */
+.tab-content {
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  padding-bottom: 2rem;
+}
+
+.tab-content:not(.active) {
+  display: none !important;
+}
+
+/* Tab links */
+.tab-link {
+  cursor: pointer;
+}
+
 /* Welcome section */
 .welcome {
   display: flex;
@@ -286,8 +305,7 @@ img {
   padding: 2rem 1.5rem;
   padding-top: calc(var(--nav-height) + 2rem);
   scroll-snap-align: start;
-  height: 100vh;
-  overflow-y: auto;
+  min-height: 100vh;
 }
 
 .section-inner {
@@ -372,12 +390,18 @@ img {
 
 /* Footer */
 .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   text-align: center;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   color: var(--text-secondary);
   font-size: 0.75rem;
+  background: var(--bg-primary);
   border-top: 1px solid var(--border);
-  scroll-snap-align: end;
+  z-index: 50;
+  transition: background var(--transition-normal), border-color var(--transition-normal);
 }
 
 /* Scroll reveal */
